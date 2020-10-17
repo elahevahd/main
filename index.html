@@ -1,0 +1,571 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+
+<head>
+  <meta name=viewport content="width=800">
+  <meta name="generator" content="HTML Tidy for Linux/x86 (vers 11 February 2007), see www.w3.org">
+  <style type="text/css">
+    /* Color scheme stolen from Sergey Karayev */
+    
+    a {
+      color: #1772d0;
+      text-decoration: none;
+    }
+    
+    a:focus,
+    a:hover {
+      color: #f09228;
+      text-decoration: none;
+    }
+    
+    body,
+    td,
+    th,
+    tr,
+    p,
+    a {
+      font-family: 'Galdeano', Verdana, Helvetica, sans-serif;
+      font-size: 16px
+    }
+    
+    strong {
+      font-family: 'Galdeano', Verdana, Helvetica, sans-serif;
+      font-size: 16px;
+    }
+    
+    heading {
+      font-family: 'Galdeano', Verdana, Helvetica, sans-serif;
+      font-size: 24px;
+    }
+    
+    papertitle {
+      font-family: 'Galdeano', Verdana, Helvetica, sans-serif;
+      font-size: 16px;
+      font-weight: 700
+    }
+    
+    name {
+      font-family: 'Galdeano', Verdana, Helvetica, sans-serif;
+      font-size: 36px;
+    }
+    
+    .one {
+      width: 160px;
+      height: 160px;
+      position: relative;
+    }
+    
+    .two {
+      width: 160px;
+      height: 160px;
+      position: absolute;
+      transition: opacity .2s ease-in-out;
+      -moz-transition: opacity .2s ease-in-out;
+      -webkit-transition: opacity .2s ease-in-out;
+    }
+    
+    .fade {
+      transition: opacity .2s ease-in-out;
+      -moz-transition: opacity .2s ease-in-out;
+      -webkit-transition: opacity .2s ease-in-out;
+    }
+    
+    span.highlight {
+      /* background-color: #ffffd0; */
+    }
+  </style>
+  <link rel="icon" type="image/png" href="images/seal_icon.png">
+  <title>Longlong Jing</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+  <link href='https://fonts.googleapis.com/css?family=Galdeano' rel='stylesheet' type='text/css'>
+</head>
+
+<body>
+  <table width="800" border="0" align="center" cellspacing="0" cellpadding="0">
+    <tr>
+      <td>
+        <table width="100%" align="center" border="0" cellspacing="0" cellpadding="20">
+          <tr>
+            <td width="67%" valign="middle">
+              <p align="center">
+                <name>Longlong Jing</name>
+              </p>
+              <p>
+                I am a fourth year Ph.D. student in the <a href="http://media-lab.ccny.cuny.edu/wordpress/people/">Media Lab</a>, Dept. Electrical Engineering at The City College of New York, CUNY, advised by Professor <a href="http://media-lab.ccny.cuny.edu/wordpress/YLTCCNYHomepage/yltian.html">Ying-Li Tian</a>. 
+                My current research focuses on Video Analysis including human action recognition and self-supervised video feature learning. Prior to CUNY, I finished my Bachelor's degree from Central South University.
+                  
+              </p>
+              <p align=center>
+                <a href="mailto:longlongjing.cs@gmail.com">Email</a> &nbsp/&nbsp
+                <a href="https://scholar.google.com/citations?user=lhdhi5wAAAAJ&hl=en">Google Scholar</a> &nbsp/&nbsp
+                <a href="data/LonglongJing-bio.txt">Biography</a> &nbsp/&nbsp
+                <a href="https://www.linkedin.com/in/longlong-jing-662b83119/"> LinkedIn </a>
+              </p>
+            </td>
+            <td width="33%">
+              <img src="images/longlong.png" width="250px">
+            </td>
+          </tr>
+        </table>
+
+	<table width="100%" align="center" border="0" cellspacing="0" cellpadding="20">
+          <tr>
+            <td width="100%" valign="middle">
+              <p>
+                <strong>News:</strong>
+                <br>
+                <ul>
+                  <li>Currently working at Waymo as a perception research intern on tracking association.</li>
+
+                  <br>
+
+                  <li> Our survey paper about self-supervised learning is accepted by TPAMI.</li>
+
+                  <br>
+
+                  <li> Worked at QCraft as a perception research intern on camera-lidar fusion till June 2020. </li>
+
+                  <br>
+
+                  <li> Worked at Comcast AI Lab as a research intern on video analysis till August 2019. </li>
+
+                </ul>
+                <br>
+              </p>
+            </td>
+          </tr>
+        </table>
+
+	
+	  <table width="100%" align="center" border="0" cellspacing="0" cellpadding="20">
+          <tr>
+            <td width="100%" valign="middle">
+              <heading>Research</heading>
+		<p>
+                I am interested in computer vision, machine learning, and image processing. Most of my research is about video analysis such as human action recognition, video feature self-supervised learning, and video feature learning from noisy data. I have also worked in weakly supervised semantic segmentation and lung nodule segmentation in CT scans with Generative Adversarial Networks.</span>
+              </p>
+            </td>
+          </tr>
+        </table>
+
+	
+	
+        <table width="100%" align="center" border="0" cellspacing="0" cellpadding="20">
+		
+	<tr onmouseout="survey_stop()" onmouseover="survey_start()">
+            <td width="25%">
+              <div class="one">
+                <div class="two" id='survey_image'><img src='images/survey-still.png'  width="160px" height="160px"></div>
+                <img src='images/Survey.gif'>
+              </div>
+              <script type="text/javascript">
+                function survey_start() {
+                  document.getElementById('survey_image').style.opacity = "1";
+                }
+
+                function survey_stop() {
+                  document.getElementById('survey_image').style.opacity = "0";
+                }
+                survey_stop()
+              </script>
+            </td>
+            <td valign="top" width="75%">
+                <a href="https://arxiv.org/pdf/1902.06162">
+                <papertitle>Self-supervised Visual Features Learning with Deep Neural Networks: A Survey</papertitle>
+              </a>
+              <br>
+              <strong>Longlong Jing</strong>,
+              <a href="http://media-lab.ccny.cuny.edu/wordpress/YLTCCNYHomepage/yltian.html">Yingli Tian</a>
+              <br>
+              <em>TPAMI</em>, 2020
+              <br>
+              <a href="https://arxiv.org/pdf/1902.06162.pdf">PDF</a>
+              <p></p>
+              <p>A comprehensive survey about self-supervised visual feature learning with deep ConvNets. Slides will be released very soon. </p>
+            </td>
+          </tr>
+		  
+
+          <tr onmouseout="mvi_stop()" onmouseover="mvi_start()">
+            <td width="25%">
+              <div class="one">
+                  <div class="two" id='mvi_image'><img src='images/MVI.png' width="160px" height="160px"></div>
+                <img src='images/MVI.gif' width="160px" height="160px">
+              </div>
+              <script type="text/javascript">
+                function mvi_start() {
+                  document.getElementById('mvi_image').style.opacity = "1";
+                }
+
+                function mvi_stop() {
+                  document.getElementById('mvi_image').style.opacity = "0";
+                }
+                mvi_stop()
+              </script>
+            </td>
+            <td valign="top" width="75%">
+              <a href="https://arxiv.org/abs/2005.14169.pdf">
+                <papertitle>Self-supervised Modal and View Invariant Feature Learning </papertitle>
+              </a>
+              <br>
+              <strong>Longlong Jing</strong>,
+              <a href="https://cyccty.github.io/">Yucheng Chen</a>,
+              <a href="https://lingzhang1.github.io/">Ling Zhang</a>,
+              <a href="http://dianzi.nwpu.edu.cn/info/1269/5955.htm">Mingyi He</a>,
+              <a href="http://media-lab.ccny.cuny.edu/wordpress/YLTCCNYHomepage/yltian.html">Yingli Tian</a>      
+              <br>
+              <em>Arxiv </em>, 2020
+              <br>
+              <a href="https://arxiv.org/pdf/2005.14169.pdf">PDF</a>
+              <p></p>
+              <p>We proposed to jointly learn modal-invariant and view-invariant features for different modalities including image, point cloud, and mesh with heterogeneous networks for 3D data. </p>
+            </td>
+          </tr>
+
+	  <tr onmouseout="xmv_stop()" onmouseover="xmv_start()">
+              <td width="25%">
+                <div class="one">
+                    <div class="two" id='xmv_image'><img src='images/XMV.png' width="160px" height="160px"></div>
+                  <img src='images/XMV.gif' width="160px" height="160px">
+                </div>
+                <script type="text/javascript">
+                  function xmv_start() {
+                    document.getElementById('xmv_image').style.opacity = "1";
+                  }
+  
+                  function xmv_stop() {
+                    document.getElementById('xmv_image').style.opacity = "0";
+                  }
+                  xmv_stop()
+                </script>
+              </td>
+              <td valign="top" width="75%">
+                <a href="https://arxiv.org/pdf/2004.05749.pdf">
+                  <papertitle>Self-supervised Feature Learning by Cross-modality and Cross-view Correspondences</papertitle>
+                </a>
+                <br>
+                <strong>Longlong Jing</strong>,
+                <a href="https://cyccty.github.io/">Yucheng Chen</a>,
+                <a href="https://lingzhang1.github.io/">Ling Zhang</a>,
+                <a href="http://dianzi.nwpu.edu.cn/info/1269/5955.htm">Mingyi He</a>,
+                <a href="http://media-lab.ccny.cuny.edu/wordpress/YLTCCNYHomepage/yltian.html">Yingli Tian</a>      
+                <br>
+                <em>Arxiv </em>, 2020
+                <br>
+                <a href="https://arxiv.org/abs/2004.05749">PDF</a>
+                <p></p>
+                <p>We propose a novel and effective self-supervised learning approach to jointly learn both 2D image features and 3D point cloud features by exploiting cross-modality and cross-view correspondences without using any human annotated labels. </p>
+              </td>
+            </tr>
+		
+	    <tr onmouseout="ssl_stop()" onmouseover="ssl_start()">
+              <td width="25%">
+                <div class="one">
+                    <div class="two" id='ssl_image'><img src='images/TOP1-VideoSSL.png' width="160px" height="160px"></div>
+                  <img src='images/VideoSSL.gif' width="160px" height="160px">
+                </div>
+                <script type="text/javascript">
+                  function ssl_start() {
+                    document.getElementById('ssl_image').style.opacity = "1";
+                  }
+  
+                  function ssl_stop() {
+                    document.getElementById('ssl_image').style.opacity = "0";
+                  }
+                  ssl_stop()
+                </script>
+              </td>
+              <td valign="top" width="75%">
+                <a href="https://arxiv.org/abs/2003.00197">
+                  <papertitle>VideoSSL: Semi-Supervised Learning for Video Classification</papertitle>
+                </a>
+                <br>
+                <strong>Longlong Jing</strong>,
+                <a href="http://xiaodongyang.org/">Toufiq Parag</a>,
+                <a href="http://www.cs.ucf.edu/~liujg/">Zhe Wu</a>,
+                <a href="http://media-lab.ccny.cuny.edu/wordpress/YLTCCNYHomepage/yltian.html">Yingli Tian</a>,
+                <a href="http://www.cs.ucf.edu/~liujg/">Hongcheng Wang</a>              
+                <br>
+                <em>Arxiv </em>, 2020
+                <br>
+                <a href="https://arxiv.org/abs/2003.00197">PDF</a>
+                <p></p>
+                <p>We propose a semi-supervised learning approach for video classification, VideoSSL, using convolutional neural networks (CNN).</p>
+              </td>
+            </tr>
+		
+          <tr onmouseout="rotnet_stop()" onmouseover="rotnet_start()">
+            <td width="25%">
+              <div class="one">
+                  <div class="two" id='rotnet_image'><img src='images/3DRotNet.png' width="160px" height="160px"></div>
+                <img src='images/3DRotNet.gif' width="160px" height="160px">
+              </div>
+              <script type="text/javascript">
+                function rotnet_start() {
+                  document.getElementById('rotnet_image').style.opacity = "1";
+                }
+
+                function rotnet_stop() {
+                  document.getElementById('rotnet_image').style.opacity = "0";
+                }
+                rotnet_stop()
+              </script>
+            </td>
+            <td valign="top" width="75%">
+              <a href="https://arxiv.org/pdf/1811.11387.pdf">
+                <papertitle>Self-Supervised Spatiotemporal Feature Learning via Video Rotation Prediction</papertitle>
+              </a>
+              <br>
+              <strong>Longlong Jing</strong>,
+              <a href="http://xiaodongyang.org/">Xiaodong Yang</a>,
+	      <a href="http://www.cs.ucf.edu/~liujg/">Jingen Liu</a>,
+              <a href="http://media-lab.ccny.cuny.edu/wordpress/YLTCCNYHomepage/yltian.html">Yingli Tian</a>              
+              <br>
+              <em>Arxiv </em>, 2019
+              <br>
+              <a href="https://arxiv.org/abs/1811.11387">PDF</a>
+              <p></p>
+              <p>We can learn spatiotemporal feature from large-scale unlabeled videos with 3D Convolutional Neural Networks.</p>
+            </td>
+          </tr>
+
+
+          <tr onmouseout="reid_stop()" onmouseover="reid_start()">
+            <td width="25%">
+              <div class="one">
+                  <div class="two" id='reid_image'><img src='images/car-0.png' width="160px" height="160px"></div>
+                <img src='images/vehicles.gif' width="160px" height="160px">
+              </div>
+              <script type="text/javascript">
+                function reid_start() {
+                  document.getElementById('reid_image').style.opacity = "1";
+                }
+
+                function reid_stop() {
+                  document.getElementById('reid_image').style.opacity = "0";
+                }
+                reid_stop()
+              </script>
+            </td>
+            <td valign="top" width="75%">
+              <a href="http://openaccess.thecvf.com/content_CVPRW_2019/papers/AI%20City/Chen_Multi-camera_Vehicle_Tracking_and_Re-identification_on_AI_City_Challenge_2019_CVPRW_2019_paper.pdf">
+                <papertitle>Multi-camera Vehicle Tracking and Re-identification on AI City Challenge 2019</papertitle>
+              </a>
+              <br>
+              <a href="https://cyccty.github.io/">Yucheng Chen</a>,
+              <strong>Longlong Jing</strong>,
+              <a href="https://www.linkedin.com/in/elahe-vahdani-345675a8/">Elahe Vahdani</a>,
+              <a href="https://www.linkedin.com/in/ling-zhang-cs/">Ling Zhang</a>,
+              <a href="http://dianzi.nwpu.edu.cn/info/1269/5955.htm">Mingyi He</a>,
+              <a href="http://media-lab.ccny.cuny.edu/wordpress/YLTCCNYHomepage/yltian.html">Yingli Tian</a>              
+              <br>
+              <em>CVPR AI City Workshop</em>, 2019
+              <br>
+              <a href="http://openaccess.thecvf.com/content_CVPRW_2019/papers/AI%20City/Chen_Multi-camera_Vehicle_Tracking_and_Re-identification_on_AI_City_Challenge_2019_CVPRW_2019_paper.pdf">PDF</a> /
+	      <a href="">Slides</a> /
+	      <a href="data/cvpr19_poster_AICITY.pdf">Poster</a>
+              <p></p>
+              <p> Our solutions to the image-based vehicle re-identification track and multi-camera vehicle tracking track on AI City Challenge 2019 (AIC2019).  Our proposed
+                  framework outperforms the current state-of-the-art vehicle ReID method by 16.3% on Veri dataset. </p>
+            </td>
+          </tr>
+
+            <tr onmouseout="ASL_stop()" onmouseover="ASL_start()">
+            <td width="25%">
+              <div class="one">
+                <div class="two" id='ASL_image'><img src='images/sign-before.png' width="160px" height="160px"></div>
+                <img src='images/ASL.gif' width="160px" height="160px">
+              </div>
+              <script type="text/javascript">
+                function ASL_start() {
+                  document.getElementById('ASL_image').style.opacity = "1";
+                }
+
+                function ASL_stop() {
+                  document.getElementById('ASL_image').style.opacity = "0";
+                }
+                ASL_stop()
+              </script>
+            </td>
+            <td valign="top" width="75%">
+              <a href="https://arxiv.org/pdf/1906.02851.pdf">
+                <papertitle>Recognizing American Sign Language Manual Signs from RGB-D Videos</papertitle>
+              </a>
+              <br>
+              <!-- <a href="http://timothybrooks.com/">Tim Brooks</a>, -->
+              <strong>Longlong Jing*</strong>,
+              <a href="https://www.linkedin.com/in/elahe-vahdani-345675a8/">Elahe Vahdani*</a>,
+              <a href="http://media-lab.ccny.cuny.edu/wordpress/YLTCCNYHomepage/yltian.html">Yingli Tian</a>,
+              <a href="https://huenerfauth.ist.rit.edu/">Matt Huenerfaut</a>
+              <br>
+              <em>Under Review </em>, 2020
+              <br>
+              <a href="https://arxiv.org/pdf/1906.02851.pdf">PDF</a> /
+	      <a href="https://longlong-jing.github.io/ASL-100-RGBD/">Project Page</a> /
+	      <a href="https://nyu.databrary.org/volume/1062">Dataset</a> /
+              <p></p>
+              <p>We propose a 3D ConvNet based multi-stream framework to recognize American Sign Language (ASL) manual signs in real-time from RGB-D videos.</p>
+            </td>
+          </tr>
+
+		  <tr onmouseout="loss_stop()" onmouseover="loss_start()">
+            <td width="25%">
+              <div class="one">
+                <div class="two" id='loss_image'><img src='images/seg-before.png' width="160px" height="160px"></div>
+                <img src='images/Coarse2Fine.gif' width="160px" height="160px">
+              </div>
+              <script type="text/javascript">
+                function loss_start() {
+                  document.getElementById('loss_image').style.opacity = "1";
+                }
+
+                function loss_stop() {
+                  document.getElementById('loss_image').style.opacity = "0";
+                }
+                loss_stop()
+              </script>
+            </td>
+            <td valign="top" width="75%">
+              <p>
+                <a href="https://arxiv.org/abs/1812.10885">
+                  <papertitle>Coarse-to-fine Semantic Segmentation from Image-level Labels</papertitle>
+                </a>
+                <br>
+                <strong>Longlong Jing*</strong>,
+                <a href="https://cyccty.github.io/">Yucheng Chen*</a>,
+                <a href="http://media-lab.ccny.cuny.edu/wordpress/YLTCCNYHomepage/yltian.html">Yingli Tian</a>
+
+                <br>
+                <em>TIP</em>, 2019
+                <br>
+                <a href="https://arxiv.org/pdf/1812.10885.pdf">PDF</a>
+                <p></p>
+                <p>We propose a novel recursive coarse-to-fine semantic segmentation framework based on only image-level category labels.</p>
+            </td>
+          </tr>
+
+
+          <tr onmouseout="LGAN_stop()" onmouseover="LGAN_start()">
+            <td width="25%">
+              <div class="one">
+                <div class="two" id='LGAN_image'><img src='images/LGAN-still.png'  width="160px" height="160px"></div>
+                <img src='images/LGAN.gif'>
+              </div>
+              <script type="text/javascript">
+                function LGAN_start() {
+                  document.getElementById('LGAN_image').style.opacity = "1";
+                }
+
+                function LGAN_stop() {
+                  document.getElementById('LGAN_image').style.opacity = "0";
+                }
+                LGAN_stop()
+              </script>
+            </td>
+            <td valign="top" width="75%">
+		<a href="https://arxiv.org/pdf/1901.03473.pdf">
+                    <papertitle>LGAN: Lung Segmentation in CT scans using Generative Adversarial Network </papertitle>
+              </a>
+              <br>
+              <a href="https://www.linkedin.com/in/jiaxing-tan-4797a163/">Jiaxing Tan*</a>,
+              <strong>Longlong Jing*</strong>,
+              <a href="http://media-lab.ccny.cuny.edu/wordpress/YLTCCNYHomepage/yltian.html">Yingli Tian</a>,
+              <a href="https://www.mskcc.org/cancer-care/doctors/oguz-akin">Oguz Akin</a>,
+              <a href="http://www.cs.csi.cuny.edu/~yumei/">Yumei Huo</a>
+              <br>
+              <em>CMIG</em>, 2020
+              <br>
+              <a href="https://arxiv.org/pdf/1901.03473.pdf">PDF</a>
+	      <p></p>
+              <p>We propose a novel deep learning Generative Adversarial Network (GAN) based lung segmentation schema for CT scans by redesigning the loss function of the discriminator which leads to more accurate result. </p>
+            </td>
+          </tr>
+
+  
+          <tr onmouseout="motionstereo_stop()" onmouseover="motionstereo_start()">
+            <td width="25%">
+              <div class="one">
+                <div class="two" id='motionstereo_image'><img src='images/VideoYOLO.png' width="160px" height="160px"></div>
+                <img src='images/VideoYOLO.gif' width="160px" height="160px">
+              </div>
+              <script type="text/javascript">
+                function motionstereo_start() {
+                  document.getElementById('motionstereo_image').style.opacity = "1";
+                }
+
+                function motionstereo_stop() {
+                  document.getElementById('motionstereo_image').style.opacity = "0";
+                }
+                motionstereo_stop()
+              </script>
+            </td>
+            <td valign="top" width="75%">
+              <a href="http://media-lab.ccny.cuny.edu/wordpress/YLTCCNYHomepage/Publications/JVCIR-VideoYoLo-2018.pdf">
+              <papertitle>Video You Only Look Once: Overall Temporal Convolutions for ActionRecognition</papertitle>
+              </a>
+              <br>
+              <strong>Longlong Jing</strong>,
+              <a href="http://xiaodongyang.org/">Xiaodong Yang</a>,
+              <a href="http://media-lab.ccny.cuny.edu/wordpress/YLTCCNYHomepage/yltian.html">Yingli Tian</a>
+              <br>
+              <em>JVCI</em>, 2018
+              <br>
+              <a href="http://media-lab.ccny.cuny.edu/wordpress/YLTCCNYHomepage/Publications/JVCIR-VideoYoLo-2018.pdf">PDF</a>
+              <p></p>
+              <p>We propose an efficient and straightforward approach to capture the overall temporal dynamics from an entire video in a single process for action recognition.</p>
+            </td>
+          </tr>
+
+          <tr onmouseout="portrait_stop()" onmouseover="portrait_start()">
+            <td width="25%">
+              <div class="one">
+                <div class="two" id='portrait_image'><img src='images/3DconvNet-RGB.png' width="160px" height="160px"></div>
+                <img src='images/3DConvNet.gif' width="160px" height="160px">
+              </div>
+              <script type="text/javascript">
+                function portrait_start() {
+                  document.getElementById('portrait_image').style.opacity = "1";
+                }
+
+                function portrait_stop() {
+                  document.getElementById('portrait_image').style.opacity = "0";
+                }
+                portrait_stop()
+              </script>
+            </td>
+            <td valign="top" width="75%">
+              <a href="http://xiaodongyang.org/publications/papers/icip17.pdf">
+                <papertitle>3D Convolutional Neural Network with Multi-Model Framework for Action Recognition</papertitle>
+              </a>
+              <br>
+              <strong>Longlong Jing</strong>,
+              <a href="http://www.yyclovemeng.com/">Yuancheng Ye</a>,
+              <a href="http://xiaodongyang.org/">Xiaodong Yang</a>,
+              <a href="http://media-lab.ccny.cuny.edu/wordpress/YLTCCNYHomepage/yltian.html">Yingli Tian</a>
+              <br>
+              <em>ICIP</em>, 2017
+              <br>
+              <a href="http://xiaodongyang.org/publications/papers/icip17.pdf">PDF</a> /
+              <a href="https://github.com/LongLong-Jing/3DMultiModel">Code</a>
+              <p></p>
+              <p>We propose an efficient and effective action recognition framework by combining multiple feature models from dynamic image, optical flow and raw frame, with 3D ConvNet.</p>
+            </td>
+          </tr>
+
+
+        <script type="text/javascript">
+          var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+          document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+        </script>
+        <script type="text/javascript">
+          try {
+            var pageTracker = _gat._getTracker("UA-7580334-1");
+            pageTracker._trackPageview();
+          } catch (err) {}
+        </script>
+        </td>
+    </tr>
+  </table>
+</body>
+
+</html>
