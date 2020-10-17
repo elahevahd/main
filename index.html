@@ -300,6 +300,41 @@
           </tr>		
 		
 		
+          <tr onmouseout="AA_stop()" onmouseover="AA_start()">
+            <td width="25%">
+              <div class="one">
+                  <div class="two" id='AA_image'><img src='images/car-0.png' width="160px" height="160px"></div>
+                <img src='images/vehicles.gif' width="160px" height="160px">
+              </div>
+              <script type="text/javascript">
+                function AA_start() {
+                  document.getElementById('AA_image').style.opacity = "1";
+                }
+
+                function AA_stop() {
+                  document.getElementById('AA_image').style.opacity = "0";
+                }
+                AA_stop()
+              </script>
+            </td>
+            <td valign="top" width="75%">
+              <a href="https://www.researchgate.net/profile/Matthew_Johnson36/publication/318124139_Gathering_Information_in_Sensor_Networks_for_Synchronized_Freshness/links/5a6a7ccd0f7e9b1c12d185eb/Gathering-Information-in-Sensor-Networks-for-Synchronized-Freshness.pdf">
+                <papertitle>Gathering Information in Sensor Networks for Synchronized Freshness</papertitle>
+              </a>
+              <br>
+              <strong>Elahe Vahdani</strong>,
+	      <a href="">Amotz Bar-Noy</a>,
+              <a href="">Matthew P. Johnson</a>,
+              <a href="">Tarek Abdelzaher</a>              
+              <br>
+              <em>IEEE SECON</em>, 2017
+              <br>
+              <a href="https://www.researchgate.net/profile/Matthew_Johnson36/publication/318124139_Gathering_Information_in_Sensor_Networks_for_Synchronized_Freshness/links/5a6a7ccd0f7e9b1c12d185eb/Gathering-Information-in-Sensor-Networks-for-Synchronized-Freshness.pdf">
+              <p></p>
+              <p> Designed an approximation algorithm for the optimization problem of scheduling a set of $n$ given jobs with their specific deadlines via a minimum number of channels in a sensor network. We proved the problem is NP-hard and provided a $\mathcal{O}(\log n)$- approximation algorithm. </p>
+            </td>
+          </tr>
+
           <tr onmouseout="reid_stop()" onmouseover="reid_start()">
             <td width="25%">
               <div class="one">
@@ -340,7 +375,8 @@
             </td>
           </tr>
 
-        <script type="text/javascript">
+		
+	<script type="text/javascript">
           var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
           document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
         </script>
