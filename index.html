@@ -260,6 +260,41 @@
             </td>
           </tr>		
 		
+            <tr onmouseout="dataset_stop()" onmouseover="dataset_start()">
+            <td width="25%">
+              <div class="one">
+                <div class="two" id='data_image'><img src='images/datachannels.PNG' width="160px" height="160px"></div>
+                <img src='images/asldata.gif' width="160px" height="160px">
+              </div>
+              <script type="text/javascript">
+                function dataset_start() {
+                  document.getElementById('data_image').style.opacity = "1";
+                }
+
+                function dataset_stop() {
+                  document.getElementById('data_image').style.opacity = "0";
+                }
+                dataset_stop()
+              </script>
+            </td>
+            <td valign="top" width="75%">
+              <a href="https://www.aclweb.org/anthology/2020.signlang-1.14.pdf">
+                <papertitle>An Isolated-Signing RGBD Dataset of 100 American Sign Language Signs Produced by Fluent ASL Signers</papertitle>
+              </a>
+              <br>
+              <a href="https://longlong-jing.github.io/">Longlong Jing*</a>,
+       	      <strong>Elahe Vahdani*</strong>,
+              <a href="https://www.linkedin.com/in/jiaxing-tan-4797a163/">Jiaxing Tan</a>,
+	      <a href="http://media-lab.ccny.cuny.edu/wordpress/YLTCCNYHomepage/yltian.html">Yingli Tian</a>
+              <br>
+              <em>Under Review </em>, 2020
+              <br>
+              <a href="https://arxiv.org/pdf/2008.03561.pdf">PDF</a> 
+              <p></p>
+              <p>dataset.</p>
+            </td>
+          </tr>		
+		
 		
           <tr onmouseout="reid_stop()" onmouseover="reid_start()">
             <td width="25%">
