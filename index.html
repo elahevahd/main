@@ -145,7 +145,43 @@
 	
         <table width="100%" align="center" border="0" cellspacing="0" cellpadding="20">
 		
+            <tr onmouseout="ASL_cont_stop()" onmouseover="ASL_cont_start()">
+            <td width="25%">
+              <div class="one">
+                <div class="two" id='ASL_cont_image'><img src='images/FE_figure.png' width="160px" height="160px"></div>
+                <img src='images/asl_cont.gif' width="160px" height="160px">
+              </div>
+              <script type="text/javascript">
+                function ASL_cont_start() {
+                  document.getElementById('ASL_cont_image').style.opacity = "1";
+                }
 
+                function ASL_cont_stop() {
+                  document.getElementById('ASL_cont_image').style.opacity = "0";
+                }
+                ASL_cont_stop()
+              </script>
+            </td>
+            <td valign="top" width="75%">
+              <a href="https://arxiv.org/pdf/2005.00253.pdf">
+                <papertitle>Recognizing American Sign Language Nonmanual Signal Grammar Errors in Continuous Videos</papertitle>
+              </a>
+              <br>
+              <!-- <a href="http://timothybrooks.com/">Tim Brooks</a>, -->
+       	      <strong>Elahe Vahdani*</strong>,
+	      <a href="https://longlong-jing.github.io/">Longlong Jing*</a>,
+              <a href="http://media-lab.ccny.cuny.edu/wordpress/YLTCCNYHomepage/yltian.html">Yingli Tian</a>,
+              <a href="https://huenerfauth.ist.rit.edu/">Matt Huenerfaut</a>
+              <br>
+              <em>ICPR </em>, 2020
+              <br>
+              <a href="https://arxiv.org/pdf/2005.00253.pdf">PDF</a> /
+              <p></p>
+              <p> We designed and developed an educational tool for sign language students to automatically process their signing videos and send them an automatic immediate feedback regarding the fluency of their signing. The framework is based on deep-learning algorithms for temporal detection of grammatically important elements from continuous signing videos, recognition of the elements, and checking their correspondence in multiple modalities such as facial expression, head movements and hand gestures. Our system was able to detect the grammatical mistakes and correct signings and provided immediate feedback to students via email.</p>
+            </td>
+          </tr>
+
+		
           <tr onmouseout="reid_stop()" onmouseover="reid_start()">
             <td width="25%">
               <div class="one">
