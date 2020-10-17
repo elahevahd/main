@@ -211,6 +211,45 @@ temp/
           </tr>
 
 		
+            <tr onmouseout="ASL_stop()" onmouseover="ASL_start()">
+            <td width="25%">
+              <div class="one">
+                <div class="two" id='ASL_image'><img src='images/sign-before.png' width="160px" height="160px"></div>
+                <img src='images/ASL.gif' width="160px" height="160px">
+              </div>
+              <script type="text/javascript">
+                function ASL_start() {
+                  document.getElementById('ASL_image').style.opacity = "1";
+                }
+
+                function ASL_stop() {
+                  document.getElementById('ASL_image').style.opacity = "0";
+                }
+                ASL_stop()
+              </script>
+            </td>
+            <td valign="top" width="75%">
+              <a href="https://arxiv.org/pdf/1906.02851.pdf">
+                <papertitle>Recognizing American Sign Language Manual Signs from RGB-D Videos</papertitle>
+              </a>
+              <br>
+              <!-- <a href="http://timothybrooks.com/">Tim Brooks</a>, -->
+              <a href="https://longlong-jing.github.io/">Longlong Jing*</a>,
+       	      <strong>Elahe Vahdani*</strong>,
+              <a href="http://media-lab.ccny.cuny.edu/wordpress/YLTCCNYHomepage/yltian.html">Yingli Tian</a>,
+              <a href="https://huenerfauth.ist.rit.edu/">Matt Huenerfaut</a>
+              <br>
+              <em>Under Review </em>, 2020
+              <br>
+              <a href="https://arxiv.org/pdf/1906.02851.pdf">PDF</a> /
+	      <a href="https://longlong-jing.github.io/ASL-100-RGBD/">Project Page</a> /
+	      <a href="https://nyu.databrary.org/volume/1062">Dataset</a> /
+              <p></p>
+              <p>We propose a 3D ConvNet based multi-stream framework to recognize American Sign Language (ASL) manual signs in real-time from RGB-D videos.</p>
+            </td>
+          </tr>
+
+		
           <tr onmouseout="reid_stop()" onmouseover="reid_start()">
             <td width="25%">
               <div class="one">
@@ -248,44 +287,6 @@ temp/
               <p></p>
               <p> Our solutions to the image-based vehicle re-identification track and multi-camera vehicle tracking track on AI City Challenge 2019 (AIC2019).  Our proposed
                   framework outperforms the current state-of-the-art vehicle ReID method by 16.3% on Veri dataset. </p>
-            </td>
-          </tr>
-
-            <tr onmouseout="ASL_stop()" onmouseover="ASL_start()">
-            <td width="25%">
-              <div class="one">
-                <div class="two" id='ASL_image'><img src='images/sign-before.png' width="160px" height="160px"></div>
-                <img src='images/ASL.gif' width="160px" height="160px">
-              </div>
-              <script type="text/javascript">
-                function ASL_start() {
-                  document.getElementById('ASL_image').style.opacity = "1";
-                }
-
-                function ASL_stop() {
-                  document.getElementById('ASL_image').style.opacity = "0";
-                }
-                ASL_stop()
-              </script>
-            </td>
-            <td valign="top" width="75%">
-              <a href="https://arxiv.org/pdf/1906.02851.pdf">
-                <papertitle>Recognizing American Sign Language Manual Signs from RGB-D Videos</papertitle>
-              </a>
-              <br>
-              <!-- <a href="http://timothybrooks.com/">Tim Brooks</a>, -->
-              <a href="https://longlong-jing.github.io/">Longlong Jing*</a>,
-       	      <strong>Elahe Vahdani*</strong>,
-              <a href="http://media-lab.ccny.cuny.edu/wordpress/YLTCCNYHomepage/yltian.html">Yingli Tian</a>,
-              <a href="https://huenerfauth.ist.rit.edu/">Matt Huenerfaut</a>
-              <br>
-              <em>Under Review </em>, 2020
-              <br>
-              <a href="https://arxiv.org/pdf/1906.02851.pdf">PDF</a> /
-	      <a href="https://longlong-jing.github.io/ASL-100-RGBD/">Project Page</a> /
-	      <a href="https://nyu.databrary.org/volume/1062">Dataset</a> /
-              <p></p>
-              <p>We propose a 3D ConvNet based multi-stream framework to recognize American Sign Language (ASL) manual signs in real-time from RGB-D videos.</p>
             </td>
           </tr>
 
