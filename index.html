@@ -152,7 +152,41 @@
 	
 	
         <table width="100%" align="center" border="0" cellspacing="0" cellpadding="20">
-		
+
+            <tr onmouseout="CC_stop()" onmouseover="CC_start()">
+            <td width="25%">
+              <div class="one">
+                <div class="two" id='cc_image'><img src='images/ccloss.PNG' width="160px" height="160px"></div>
+                <img src='images/CMCL.gif' width="160px" height="160px">
+              </div>
+              <script type="text/javascript">
+                function CC_start() {
+                  document.getElementById('cc_image').style.opacity = "1";
+                }
+
+                function CC_stop() {
+                  document.getElementById('cc_image').style.opacity = "0";
+                }
+                CC_stop()
+              </script>
+            </td>
+            <td valign="top" width="75%">
+              <a href="https://arxiv.org/pdf/2008.03561.pdf">
+                <papertitle>Cross-modal Center Loss</papertitle>
+              </a>
+              <br>
+              <a href="https://longlong-jing.github.io/">Longlong Jing*</a>,
+       	      <strong>Elahe Vahdani*</strong>,
+              <a href="https://www.linkedin.com/in/jiaxing-tan-4797a163/">Jiaxing Tan</a>,
+	      <a href="http://media-lab.ccny.cuny.edu/wordpress/YLTCCNYHomepage/yltian.html">Yingli Tian</a>
+              <br>
+              <em> CVPR 2021
+              <br>
+              <a href="https://arxiv.org/pdf/2008.03561.pdf">PDF</a> 
+              <p></p>
+              <p>We propose a novel cross-modal center loss to map the representations of different settings of modalities (e.g., images, mesh, point-cloud) into a common feature space.</p>
+            </td>
+          </tr>			
             <tr onmouseout="ASL_cont_stop()" onmouseover="ASL_cont_start()">
             <td width="25%">
               <div class="one">
@@ -229,40 +263,6 @@
           </tr>
 
 		
-            <tr onmouseout="CC_stop()" onmouseover="CC_start()">
-            <td width="25%">
-              <div class="one">
-                <div class="two" id='cc_image'><img src='images/ccloss.PNG' width="160px" height="160px"></div>
-                <img src='images/CMCL.gif' width="160px" height="160px">
-              </div>
-              <script type="text/javascript">
-                function CC_start() {
-                  document.getElementById('cc_image').style.opacity = "1";
-                }
-
-                function CC_stop() {
-                  document.getElementById('cc_image').style.opacity = "0";
-                }
-                CC_stop()
-              </script>
-            </td>
-            <td valign="top" width="75%">
-              <a href="https://arxiv.org/pdf/2008.03561.pdf">
-                <papertitle>Cross-modal Center Loss</papertitle>
-              </a>
-              <br>
-              <a href="https://longlong-jing.github.io/">Longlong Jing*</a>,
-       	      <strong>Elahe Vahdani*</strong>,
-              <a href="https://www.linkedin.com/in/jiaxing-tan-4797a163/">Jiaxing Tan</a>,
-	      <a href="http://media-lab.ccny.cuny.edu/wordpress/YLTCCNYHomepage/yltian.html">Yingli Tian</a>
-              <br>
-              <em>Under Review </em>, 2020
-              <br>
-              <a href="https://arxiv.org/pdf/2008.03561.pdf">PDF</a> 
-              <p></p>
-              <p>We propose a novel cross-modal center loss to map the representations of different settings of modalities (e.g., images, mesh, point-cloud) into a common feature space.</p>
-            </td>
-          </tr>		
 		
             <tr onmouseout="dataset_stop()" onmouseover="dataset_start()">
             <td width="25%">
