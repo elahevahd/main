@@ -158,23 +158,24 @@
 	
         <table width="100%" align="center" border="0" cellspacing="0" cellpadding="20">
 
-            <tr onmouseout="ASL_cont_stop()" onmouseover="ASL_cont_start()">
+         <tr onmouseout="CC_stop()" onmouseover="CC_start()">
             <td width="25%">
               <div class="one">
-                <div class="two" id='survey'><img src='images/potloc_fig.png' width="160px" height="160px"></div>
+                <div class="two" id='cc_image'><img src='images/potloc_fig.png' width="160px" height="160px"></div>
                 <img src='images/potloc_GIF.gif' width="160px" height="160px">
               </div>
               <script type="text/javascript">
-                function ASL_cont_start() {
-                  document.getElementById('ASL_cont_image').style.opacity = "1";
+                function CC_start() {
+                  document.getElementById('cc_image').style.opacity = "1";
                 }
 
-                function ASL_cont_stop() {
-                  document.getElementById('ASL_cont_image').style.opacity = "0";
+                function CC_stop() {
+                  document.getElementById('cc_image').style.opacity = "0";
                 }
-                ASL_cont_stop()
+                CC_stop()
               </script>
-            </td>		    
+            </td>
+	
 
            <td valign="top" width="75%">
               <a href="https://www.sciencedirect.com/science/article/abs/pii/S1077314224001255">
