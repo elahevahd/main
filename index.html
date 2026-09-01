@@ -4,453 +4,496 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Elahe Vahdani</title>
+  <title>Elahe Vahdani — Data Scientist, Microsoft Ads · Ph.D. Computer Vision</title>
+  <meta name="description" content="Elahe Vahdani is a Data Scientist at Microsoft Ads building multimodal retrieval and ranking systems for billions of ads. Ph.D. in Computer Science (CUNY) in computer vision, with papers at CVPR and IEEE TPAMI.">
+  <link rel="canonical" href="https://elahevahd.github.io/main/">
   <link rel="icon" type="image/png" href="images/seal_icon.png">
-  <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+
+  <!-- Social preview (LinkedIn, Slack, iMessage) -->
+  <meta property="og:type" content="profile">
+  <meta property="og:title" content="Elahe Vahdani">
+  <meta property="og:description" content="Data Scientist at Microsoft Ads · multimodal retrieval and ranking · Ph.D. Computer Vision (CUNY) · CVPR, TPAMI">
+  <meta property="og:url" content="https://elahevahd.github.io/main/">
+  <meta property="og:image" content="https://elahevahd.github.io/main/images/Ellie_2024.jpg">
+  <meta name="twitter:card" content="summary">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Structured data: helps search engines show the right card for your name -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Elahe Vahdani",
+    "jobTitle": "Data Scientist",
+    "worksFor": { "@type": "Organization", "name": "Microsoft" },
+    "alumniOf": { "@type": "CollegeOrUniversity", "name": "The City University of New York" },
+    "url": "https://elahevahd.github.io/main/",
+    "image": "https://elahevahd.github.io/main/images/Ellie_2024.jpg",
+    "sameAs": [
+      "https://scholar.google.com/citations?user=8UCruqIAAAAJ&hl=en",
+      "https://github.com/elahevahd",
+      "https://www.linkedin.com/in/elahe-vahdani/"
+    ]
+  }
+  </script>
+
   <style>
+    /* ============ Design tokens ============ */
     :root {
-      --link-color: #1772d0;
-      --link-hover: #f09228;
-      --text-color: #333;
-      --bg-color: #fff;
-      --section-bg: #f9f9f9;
-      --border-color: #e0e0e0;
-      --max-width: 860px;
+      --bg: #fbfbfa;
+      --surface: #ffffff;
+      --surface-2: #f3f4f2;
+      --text: #1b1d21;
+      --muted: #5c6270;
+      --border: #e4e5e1;
+      --accent: #1f4fd6;
+      --accent-hover: #143aa8;
+      --accent-soft: #e9eefc;
+      --pill: #eef0ee;
+      --shadow: 0 1px 2px rgba(20, 22, 26, 0.05), 0 8px 24px -18px rgba(20, 22, 26, 0.25);
+      --radius: 14px;
+      --max: 980px;
     }
 
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #0f1115;
+        --surface: #161a21;
+        --surface-2: #1c212a;
+        --text: #e8e9e6;
+        --muted: #a2a8b3;
+        --border: #2a303b;
+        --accent: #8db0ff;
+        --accent-hover: #b4caff;
+        --accent-soft: #1e2a45;
+        --pill: #232936;
+        --shadow: 0 1px 2px rgba(0, 0, 0, 0.4), 0 10px 30px -18px rgba(0, 0, 0, 0.8);
+      }
     }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; scroll-padding-top: 72px; }
 
     body {
-      font-family: 'Open Sans', 'Helvetica Neue', Arial, sans-serif;
+      font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
       font-size: 16px;
       line-height: 1.6;
-      color: var(--text-color);
-      background: var(--bg-color);
+      color: var(--text);
+      background: var(--bg);
+      -webkit-font-smoothing: antialiased;
     }
 
-    a {
-      color: var(--link-color);
-      text-decoration: none;
+    a { color: var(--accent); text-decoration: none; }
+    a:hover, a:focus-visible { color: var(--accent-hover); text-decoration: underline; text-underline-offset: 3px; }
+    a:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 4px; }
+
+    img { max-width: 100%; display: block; }
+
+    .container { max-width: var(--max); margin: 0 auto; padding: 0 24px; }
+
+    .skip-link {
+      position: absolute; left: -999px; top: 8px; background: var(--surface); color: var(--text);
+      padding: 8px 12px; border: 1px solid var(--border); border-radius: 8px; z-index: 100;
+    }
+    .skip-link:focus { left: 8px; }
+
+    /* ============ Nav ============ */
+    .nav {
+      position: sticky; top: 0; z-index: 50;
+      background: color-mix(in srgb, var(--bg) 86%, transparent);
+      backdrop-filter: saturate(160%) blur(10px);
+      -webkit-backdrop-filter: saturate(160%) blur(10px);
+      border-bottom: 1px solid var(--border);
+    }
+    .nav .container { display: flex; align-items: center; justify-content: space-between; height: 56px; gap: 16px; }
+    .brand { font-weight: 700; letter-spacing: -0.01em; color: var(--text); white-space: nowrap; }
+    .brand:hover { text-decoration: none; color: var(--accent); }
+    .nav-links { display: flex; gap: 4px; list-style: none; overflow-x: auto; }
+    .nav-links a {
+      display: inline-block; padding: 6px 10px; border-radius: 8px; font-size: 0.92rem; font-weight: 500; color: var(--muted); white-space: nowrap;
+    }
+    .nav-links a:hover { background: var(--surface-2); color: var(--text); text-decoration: none; }
+
+    /* ============ Hero ============ */
+    .hero { padding: 56px 0 40px; }
+    .hero-grid { display: grid; grid-template-columns: 1fr 220px; gap: 48px; align-items: center; }
+    .eyebrow { font-size: 0.85rem; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; color: var(--muted); margin-bottom: 10px; }
+    h1 { font-size: clamp(2rem, 4.5vw, 2.9rem); line-height: 1.1; letter-spacing: -0.02em; font-weight: 700; margin-bottom: 10px; }
+    .tagline { font-size: 1.12rem; color: var(--muted); margin-bottom: 20px; font-weight: 500; }
+    .lede { font-size: 1.05rem; max-width: 62ch; }
+    .lede + .lede { margin-top: 12px; }
+
+    .photo {
+      width: 220px; aspect-ratio: 4 / 5; object-fit: cover; border-radius: 18px;
+      box-shadow: var(--shadow); border: 1px solid var(--border); justify-self: end;
     }
 
-    a:hover,
-    a:focus {
-      color: var(--link-hover);
+    .links { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 24px; }
+    .btn {
+      display: inline-flex; align-items: center; gap: 8px; padding: 8px 14px; border-radius: 999px;
+      border: 1px solid var(--border); background: var(--surface); color: var(--text); font-weight: 500; font-size: 0.92rem;
+      transition: border-color .15s, background .15s, transform .15s;
+    }
+    .btn:hover { border-color: var(--accent); color: var(--accent); text-decoration: none; transform: translateY(-1px); }
+    .btn svg { width: 16px; height: 16px; fill: currentColor; }
+    .btn.primary { background: var(--accent); border-color: var(--accent); color: #fff; }
+    .btn.primary:hover { background: var(--accent-hover); border-color: var(--accent-hover); color: #fff; }
+
+    .areas { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 28px; }
+    .chip { font-size: 0.82rem; font-weight: 500; padding: 5px 11px; border-radius: 999px; background: var(--pill); color: var(--text); }
+
+    /* ============ Sections ============ */
+    section { padding: 40px 0; border-top: 1px solid var(--border); }
+    .section-head { display: flex; align-items: baseline; justify-content: space-between; gap: 16px; margin-bottom: 22px; flex-wrap: wrap; }
+    h2 { font-size: 1.45rem; letter-spacing: -0.015em; font-weight: 700; }
+    .section-head .sub { color: var(--muted); font-size: 0.95rem; }
+
+    /* ============ Work cards ============ */
+    .cards { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; }
+    .card {
+      background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 20px 22px;
+      box-shadow: var(--shadow); display: flex; flex-direction: column; gap: 10px;
+    }
+    .card h3 { font-size: 1.05rem; font-weight: 600; letter-spacing: -0.01em; }
+    .card p { color: var(--muted); font-size: 0.95rem; }
+    .card .tags { display: flex; flex-wrap: wrap; gap: 6px; margin-top: auto; padding-top: 6px; }
+    .tag { font-size: 0.76rem; font-weight: 500; padding: 3px 9px; border-radius: 6px; background: var(--accent-soft); color: var(--accent); }
+    .card-meta { font-size: 0.8rem; font-weight: 600; letter-spacing: 0.05em; text-transform: uppercase; color: var(--muted); }
+
+    .earlier { margin-top: 18px; color: var(--muted); font-size: 0.95rem; }
+
+    /* ============ Publications ============ */
+    .pub { display: grid; grid-template-columns: 150px 1fr; gap: 22px; padding: 22px 0; }
+    .pub + .pub { border-top: 1px solid var(--border); }
+    .pub-thumb { position: relative; width: 150px; height: 150px; overflow: hidden; border-radius: 12px; border: 1px solid var(--border); background: var(--surface-2); }
+    .pub-thumb img { width: 100%; height: 100%; object-fit: cover; }
+    .pub-thumb .overlay { position: absolute; inset: 0; opacity: 0; transition: opacity .25s ease-in-out; background: var(--surface); }
+    .pub-thumb:hover .overlay { opacity: 1; }
+    .pub-title { font-weight: 600; font-size: 1.02rem; line-height: 1.4; color: var(--text); }
+    .pub-title:hover { color: var(--accent); }
+    .pub-authors { margin-top: 5px; font-size: 0.95rem; color: var(--muted); }
+    .pub-authors strong { color: var(--text); font-weight: 600; }
+    .pub-authors a { color: var(--muted); text-decoration: underline; text-decoration-color: var(--border); text-underline-offset: 3px; }
+    .pub-authors a:hover { color: var(--accent); text-decoration-color: var(--accent); }
+    .pub-meta { display: flex; align-items: center; flex-wrap: wrap; gap: 8px; margin-top: 8px; }
+    .venue { font-size: 0.78rem; font-weight: 600; padding: 3px 9px; border-radius: 6px; background: var(--accent-soft); color: var(--accent); letter-spacing: 0.02em; }
+    .venue.top { background: var(--accent); color: #fff; }
+    .year { font-size: 0.88rem; color: var(--muted); }
+    .pub-links { display: flex; flex-wrap: wrap; gap: 6px; margin-left: 4px; }
+    .pub-links a { font-size: 0.82rem; font-weight: 500; padding: 3px 9px; border-radius: 6px; border: 1px solid var(--border); color: var(--text); background: var(--surface); }
+    .pub-links a:hover { border-color: var(--accent); color: var(--accent); text-decoration: none; }
+    .pub-desc { margin-top: 8px; font-size: 0.95rem; color: var(--muted); }
+    .footnote { color: var(--muted); font-size: 0.88rem; margin-top: 16px; }
+
+    /* ============ Background ============ */
+    .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; }
+    h3.small { font-size: 0.85rem; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; color: var(--muted); margin-bottom: 12px; }
+    .timeline { list-style: none; }
+    .timeline li { display: grid; grid-template-columns: 112px 1fr; gap: 12px; padding: 9px 0; border-top: 1px solid var(--border); font-size: 0.95rem; }
+    .timeline li:first-child { border-top: 0; padding-top: 0; }
+    .timeline .when { color: var(--muted); font-weight: 500; white-space: nowrap; }
+    .edu p { font-size: 0.95rem; }
+    .edu p + p { margin-top: 8px; }
+    .edu .muted { color: var(--muted); }
+
+    /* ============ Footer ============ */
+    footer { padding: 32px 0 48px; border-top: 1px solid var(--border); color: var(--muted); font-size: 0.9rem; }
+    footer .row { display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap; }
+
+    /* ============ Responsive ============ */
+    @media (max-width: 760px) {
+      .hero { padding: 36px 0 28px; }
+      .hero-grid { grid-template-columns: 1fr; gap: 24px; }
+      .photo { width: 160px; justify-self: start; order: -1; }
+      .cards { grid-template-columns: 1fr; }
+      .pub { grid-template-columns: 1fr; gap: 14px; }
+      .pub-thumb { width: 100%; height: 170px; }
+      .two-col { grid-template-columns: 1fr; gap: 28px; }
+      .timeline li { grid-template-columns: 96px 1fr; }
+      .brand { display: none; }
+      .nav .container { justify-content: center; padding: 0 12px; }
+      .nav-links a { font-size: 0.88rem; padding: 6px 8px; }
     }
 
-    .container {
-      max-width: var(--max-width);
-      margin: 0 auto;
-      padding: 40px 20px;
-    }
-
-    /* ---- Header / Bio ---- */
-    .bio {
-      display: flex;
-      gap: 40px;
-      align-items: center;
-      margin-bottom: 40px;
-    }
-
-    .bio-text {
-      flex: 1;
-    }
-
-    .bio-text h1 {
-      font-family: 'Lora', 'Times New Roman', serif;
-      font-size: 2.2rem;
-      text-align: center;
-      margin-bottom: 12px;
-    }
-
-    .bio-text p {
-      margin-bottom: 12px;
-    }
-
-    .bio-links {
-      text-align: center;
-      margin-top: 8px;
-    }
-
-    .bio-links a {
-      margin: 0 6px;
-    }
-
-    .bio-photo img {
-      width: 220px;
-      border-radius: 10px;
-    }
-
-    /* ---- Section headings ---- */
-    section {
-      margin-bottom: 36px;
-    }
-
-    section > h2 {
-      font-family: 'Lora', 'Times New Roman', serif;
-      font-size: 1.5rem;
-      border-bottom: 2px solid var(--border-color);
-      padding-bottom: 6px;
-      margin-bottom: 16px;
-    }
-
-    /* ---- News ---- */
-    .news-table {
-      width: 100%;
-      border-collapse: collapse;
-    }
-
-    .news-table td {
-      padding: 8px 12px;
-      vertical-align: top;
-    }
-
-    .news-table td:first-child {
-      white-space: nowrap;
-      font-weight: 600;
-      width: 150px;
-    }
-
-    .news-table tr + tr {
-      border-top: 1px solid var(--border-color);
-    }
-
-    /* ---- Publication card ---- */
-    .pub {
-      display: flex;
-      gap: 24px;
-      padding: 20px 0;
-    }
-
-    .pub + .pub {
-      border-top: 1px solid var(--border-color);
-    }
-
-    .pub-thumb {
-      flex-shrink: 0;
-      width: 160px;
-      height: 160px;
-      position: relative;
-      overflow: hidden;
-      border-radius: 6px;
-    }
-
-    .pub-thumb img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      display: block;
-    }
-
-    .pub-thumb .overlay {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      opacity: 0;
-      transition: opacity 0.25s ease-in-out;
-    }
-
-    .pub-thumb:hover .overlay {
-      opacity: 1;
-    }
-
-    .pub-info {
-      flex: 1;
-    }
-
-    .pub-title {
-      font-family: 'Lora', 'Times New Roman', serif;
-      font-weight: 700;
-      font-size: 1rem;
-      color: var(--link-color);
-    }
-
-    .pub-title:hover {
-      color: var(--link-hover);
-    }
-
-    .pub-authors {
-      margin: 4px 0;
-    }
-
-    .pub-venue {
-      font-style: italic;
-      margin-bottom: 4px;
-    }
-
-    .pub-links a + a::before {
-      content: " / ";
-      color: var(--text-color);
-    }
-
-    .pub-desc {
-      margin-top: 6px;
-      font-size: 0.95rem;
-      color: #555;
-    }
-
-    /* ---- Hobbies ---- */
-    .hobbies ul {
-      list-style: disc inside;
-      padding-left: 8px;
-    }
-
-    /* ---- Responsive ---- */
-    @media (max-width: 680px) {
-      .bio {
-        flex-direction: column-reverse;
-        text-align: center;
-      }
-
-      .bio-photo img {
-        width: 180px;
-      }
-
-      .pub {
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-      }
-
-      .news-table td:first-child {
-        width: auto;
-      }
+    @media print {
+      .nav, .skip-link { display: none; }
+      body { background: #fff; color: #000; }
+      .card, .pub-thumb, .btn { box-shadow: none; }
+      a { color: #000; }
     }
   </style>
 </head>
 
 <body>
-  <div class="container">
+  <a class="skip-link" href="#about">Skip to content</a>
 
-    <!-- ====== Bio ====== -->
-    <header class="bio">
-      <div class="bio-text">
-        <h1>Elahe Vahdani</h1>
-        <p>
-          I am a Data Scientist on the Ads team at Microsoft, where I work on text-to-image retrieval and multimodal modeling for ads in the Microsoft Audience Network. My work focuses on improving relevance and retrieval quality using representations that bridge vision and language, with applications in large-scale advertising systems. I earned my Ph.D. in Computer Science from The City University of New York, where my research focused on computer vision and deep learning. My dissertation, “Deep Learning-Based Human Action Understanding in Videos,” explored learning spatiotemporal representations from video data. During my graduate studies, I collaborated with researchers across multiple projects and worked on topics including visual scene understanding, video action detection, cross-modal retrieval, time-series analysis, and sign language understanding. At Microsoft, I build on this research background to develop and evaluate production-scale multimodal models that connect text and visual content in real-world ad scenarios.
-        </p>
-        <div class="bio-links">
-          <a href="mailto:evahdani@gradcenter.cuny.edu">Email</a> &nbsp;/&nbsp;
-          <a href="https://scholar.google.com/citations?user=8UCruqIAAAAJ&hl=en">Google Scholar</a> &nbsp;/&nbsp;
-          <a href="https://github.com/elahevahd">GitHub</a> &nbsp;/&nbsp;
-          <a href="https://www.linkedin.com/in/elahe-vahdani/">LinkedIn</a>
+  <nav class="nav" aria-label="Site">
+    <div class="container">
+      <a class="brand" href="#about">Elahe Vahdani</a>
+      <ul class="nav-links">
+        <li><a href="#work">Work</a></li>
+        <li><a href="#publications">Publications</a></li>
+        <li><a href="#background">Background</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <main class="container">
+
+    <!-- ============ Hero / About ============ -->
+    <header class="hero" id="about">
+      <div class="hero-grid">
+        <div>
+          <div class="eyebrow">Data Scientist · Microsoft Ads</div>
+          <h1>Elahe Vahdani</h1>
+          <p class="tagline">Multimodal retrieval and ranking for ads · Ph.D. in Computer Science, CUNY</p>
+
+          <p class="lede">
+            I build vision-language systems that decide which images belong with which ads across the Microsoft Audience Network — retrieval, ranking and evaluation at the scale of billions of ads, shipped and measured in production.
+          </p>
+          <p class="lede">
+            Before Microsoft, I did a Ph.D. in computer vision at The City University of New York, working on action understanding in video, cross-modal retrieval and sign language recognition, with papers at CVPR and IEEE TPAMI. I review for CVPR and several journals.
+          </p>
+
+          <div class="links">
+            <a class="btn primary" href="mailto:ellie.vahdani@gmail.com">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M2 5h20v14H2z" fill="none" stroke="currentColor" stroke-width="2"/><path d="m2 6 10 7 10-7" fill="none" stroke="currentColor" stroke-width="2"/></svg>
+              Email
+            </a>
+            <a class="btn" href="https://scholar.google.com/citations?user=8UCruqIAAAAJ&hl=en">Google Scholar</a>
+            <a class="btn" href="https://github.com/elahevahd">GitHub</a>
+            <a class="btn" href="https://www.linkedin.com/in/elahe-vahdani/">LinkedIn</a>
+          </div>
+
+          <div class="areas" aria-label="Areas of work">
+            <span class="chip">Computer vision</span>
+            <span class="chip">Vision-language models (CLIP, SigLIP)</span>
+            <span class="chip">Retrieval &amp; ranking</span>
+            <span class="chip">Multimodal evaluation</span>
+            <span class="chip">Large-scale ML pipelines</span>
+            <span class="chip">Online experimentation</span>
+          </div>
         </div>
-      </div>
-      <div class="bio-photo">
-        <img src="images/Ellie_2024.jpg" alt="Elahe Vahdani">
+
+        <img class="photo" src="images/Ellie_2024.jpg" alt="Portrait of Elahe Vahdani">
       </div>
     </header>
 
-    <!-- ====== News ====== -->
-    <section>
-      <h2>News</h2>
-      <table class="news-table">
-        <tr>
-          <td>July 2024</td>
-          <td>I joined Microsoft as a Data Scientist, currently working on text-to-image retrieval for ads in the Microsoft Audience Network.</td>
-        </tr>
-        <tr>
-          <td>December 2023</td>
-          <td>I defended my Ph.D. thesis in Computer Science at The City University of New York, with a focus on Deep Learning-Based Human Action Understanding in Videos.</td>
-        </tr>
-        <tr>
-          <td>Fall 2021</td>
-          <td>I completed an internship at Dataminr as a Research Science Intern.</td>
-        </tr>
-        <tr>
-          <td>Summer 2021</td>
-          <td>I completed an internship at Expedia Group as a Data Science Intern.</td>
-        </tr>
-        <tr>
-          <td>Summer 2018</td>
-          <td>I joined the Media Lab at The City University of New York as a Ph.D. student under the supervision of Professor Yingli Tian.</td>
-        </tr>
-      </table>
+    <!-- ============ Work ============ -->
+    <section id="work">
+      <div class="section-head">
+        <h2>Work</h2>
+        <span class="sub">Microsoft Ads · Microsoft Audience Network · 2024–present</span>
+      </div>
+
+      <div class="cards">
+        <article class="card">
+          <div class="card-meta">Travel ads</div>
+          <h3>Matching travel ads to the right property images</h3>
+          <p>Resolved ad destination URLs to the hotels and properties they point to, then filtered candidate images with a CLIP-based scene classifier so that ads show the place they advertise. Launched across billion-scale travel inventory and validated with online A/B tests.</p>
+          <div class="tags"><span class="tag">CLIP</span><span class="tag">Entity resolution</span><span class="tag">A/B testing</span></div>
+        </article>
+
+        <article class="card">
+          <div class="card-meta">Text ads</div>
+          <h3>Image retrieval for text ads from landing-page content</h3>
+          <p>Redesigned how images are chosen for text ads: landing-page content is embedded with SigLIP and matched with DiskANN vector search, with a tuned retrieval-distance gate that suppresses poor matches. Offline quality is measured with an LLM-as-judge evaluation framework; shipped through a backfill plus a daily pipeline and evaluated online.</p>
+          <div class="tags"><span class="tag">SigLIP</span><span class="tag">DiskANN</span><span class="tag">LLM-as-judge</span><span class="tag">A/B testing</span></div>
+        </article>
+
+        <article class="card">
+          <div class="card-meta">Cashback ads</div>
+          <h3>Category-aware images for ads without a logo</h3>
+          <p>Replaced random fallback images for logo-less cashback ads with images matched to a fine-grained category taxonomy: classification into thousands of categories, embedding retrieval, a fine-tuned re-ranker, and DPP-based diversification so what is served stays varied. Human review gates every category–image pair.</p>
+          <div class="tags"><span class="tag">Multimodal retrieval</span><span class="tag">Re-ranking</span><span class="tag">DPP</span></div>
+        </article>
+
+        <article class="card">
+          <div class="card-meta">Ads quality</div>
+          <h3>Incident investigation with multimodal retrieval</h3>
+          <p>Built a SigLIP-based text-to-image and image-to-image retrieval system over the full ad corpus for incident triage, with automated reporting and mitigation workflows that cut investigation time from hours to minutes.</p>
+          <div class="tags"><span class="tag">SigLIP</span><span class="tag">Vector search</span><span class="tag">Automation</span></div>
+        </article>
+      </div>
+
+      <p class="earlier">Earlier: Research Science Intern at Dataminr (fall 2021) and Data Science Intern at Expedia Group (summer 2021).</p>
     </section>
 
-    <!-- ====== Research Projects ====== -->
-    <section>
-      <h2>Research Projects</h2>
-      <p style="margin-bottom:16px">
-        Below is a summary of my research projects encompassing various areas of computer vision. These include Action Detection in Untrimmed Videos, Sign Language Understanding, Cross-Modal Retrieval, and Multi-camera Vehicle Tracking and Re-identification.
-      </p>
+    <!-- ============ Publications ============ -->
+    <section id="publications">
+      <div class="section-head">
+        <h2>Publications</h2>
+        <span class="sub">Hover a thumbnail for the paper figure · <a href="https://scholar.google.com/citations?user=8UCruqIAAAAJ&hl=en">Google Scholar</a></span>
+      </div>
 
       <!-- POTLoc -->
-      <div class="pub">
+      <article class="pub">
         <div class="pub-thumb">
-          <img src="images/potloc_GIF.gif" alt="POTLoc">
-          <img class="overlay" src="images/potloc_fig.png" alt="POTLoc figure">
+          <img src="images/potloc_GIF.gif" alt="POTLoc animation" loading="lazy">
+          <img class="overlay" src="images/potloc_fig.png" alt="POTLoc figure" loading="lazy">
         </div>
-        <div class="pub-info">
+        <div>
           <a class="pub-title" href="https://www.sciencedirect.com/science/article/abs/pii/S1077314224001255">POTLoc: Pseudo-label Oriented Transformer for Point-Supervised Temporal Action Localization</a>
           <div class="pub-authors"><strong>Elahe Vahdani</strong>, <a href="http://media-lab.ccny.cuny.edu/wordpress/YLTCCNYHomepage/yltian.html">Yingli Tian</a></div>
-          <div class="pub-venue">CVIU, 2024</div>
-          <div class="pub-links"><a href="https://arxiv.org/pdf/2310.13585">PDF</a></div>
-          <p class="pub-desc">A Pseudo-label Oriented Transformer for weakly-supervised Action Localization utilizing only point-level annotation.</p>
+          <div class="pub-meta"><span class="venue">CVIU</span><span class="year">2024</span>
+            <span class="pub-links"><a href="https://arxiv.org/pdf/2310.13585">PDF</a></span></div>
+          <p class="pub-desc">A pseudo-label-oriented transformer for weakly supervised action localization that needs only a single labeled point per action instance.</p>
         </div>
-      </div>
+      </article>
 
       <!-- Survey -->
-      <div class="pub">
+      <article class="pub">
         <div class="pub-thumb">
-          <img src="images/task-relations.png" alt="Survey">
-          <img class="overlay" src="images/intro-temporal-task_new.png" alt="Survey figure">
+          <img src="images/task-relations.png" alt="Action detection task relations" loading="lazy">
+          <img class="overlay" src="images/intro-temporal-task_new.png" alt="Survey figure" loading="lazy">
         </div>
-        <div class="pub-info">
+        <div>
           <a class="pub-title" href="https://ieeexplore.ieee.org/document/9839464/">Deep Learning-based Action Detection in Untrimmed Videos: A Survey</a>
           <div class="pub-authors"><strong>Elahe Vahdani</strong>, <a href="http://media-lab.ccny.cuny.edu/wordpress/YLTCCNYHomepage/yltian.html">Yingli Tian</a></div>
-          <div class="pub-venue">TPAMI, 2022</div>
-          <div class="pub-links"><a href="https://arxiv.org/pdf/2110.00111.pdf">PDF</a></div>
-          <p class="pub-desc">An extensive overview of deep learning-based algorithms to tackle temporal action detection in untrimmed videos with different supervision levels.</p>
+          <div class="pub-meta"><span class="venue top">IEEE TPAMI</span><span class="year">2022</span>
+            <span class="pub-links"><a href="https://arxiv.org/pdf/2110.00111.pdf">PDF</a></span></div>
+          <p class="pub-desc">A comprehensive survey of deep learning methods for temporal action detection in untrimmed videos across supervision levels — fully, weakly, unsupervised and semi-supervised.</p>
         </div>
-      </div>
+      </article>
 
       <!-- Cross-Modal Center Loss -->
-      <div class="pub">
+      <article class="pub">
         <div class="pub-thumb">
-          <img src="images/CMCL.gif" alt="Cross-Modal Center Loss">
-          <img class="overlay" src="images/ccloss.PNG" alt="CMCL figure">
+          <img src="images/CMCL.gif" alt="Cross-modal center loss animation" loading="lazy">
+          <img class="overlay" src="images/ccloss.PNG" alt="Cross-modal center loss figure" loading="lazy">
         </div>
-        <div class="pub-info">
+        <div>
           <a class="pub-title" href="https://openaccess.thecvf.com/content/CVPR2021/papers/Jing_Cross-Modal_Center_Loss_for_3D_Cross-Modal_Retrieval_CVPR_2021_paper.pdf">Cross-Modal Center Loss for 3D Cross-Modal Retrieval</a>
-          <div class="pub-authors">
-            <a href="https://longlong-jing.github.io/">Longlong Jing*</a>,
-            <strong>Elahe Vahdani*</strong>,
-            <a href="https://www.linkedin.com/in/jiaxing-tan-4797a163/">Jiaxing Tan</a>,
-            <a href="http://media-lab.ccny.cuny.edu/wordpress/YLTCCNYHomepage/yltian.html">Yingli Tian</a>
-          </div>
-          <div class="pub-venue">CVPR, 2021</div>
-          <div class="pub-links"><a href="https://openaccess.thecvf.com/content/CVPR2021/papers/Jing_Cross-Modal_Center_Loss_for_3D_Cross-Modal_Retrieval_CVPR_2021_paper.pdf">PDF</a></div>
-          <p class="pub-desc">A novel cross-modal framework, designed to map representations from various modalities — such as images, mesh, and point-cloud — into a unified feature space.</p>
+          <div class="pub-authors"><a href="https://longlong-jing.github.io/">Longlong Jing</a>*, <strong>Elahe Vahdani</strong>*, <a href="https://www.linkedin.com/in/jiaxing-tan-4797a163/">Jiaxing Tan</a>, <a href="http://media-lab.ccny.cuny.edu/wordpress/YLTCCNYHomepage/yltian.html">Yingli Tian</a></div>
+          <div class="pub-meta"><span class="venue top">CVPR</span><span class="year">2021</span>
+            <span class="pub-links"><a href="https://openaccess.thecvf.com/content/CVPR2021/papers/Jing_Cross-Modal_Center_Loss_for_3D_Cross-Modal_Retrieval_CVPR_2021_paper.pdf">PDF</a></span></div>
+          <p class="pub-desc">A cross-modal framework that maps images, meshes and point clouds into one shared embedding space, trained end to end with a cross-modal center loss.</p>
         </div>
-      </div>
+      </article>
 
       <!-- ASL Nonmanual Signals -->
-      <div class="pub">
+      <article class="pub">
         <div class="pub-thumb">
-          <img src="images/FE_several.gif" alt="ASL Nonmanual Signals">
-          <img class="overlay" src="images/FE_figure.png" alt="ASL NMS figure">
+          <img src="images/FE_several.gif" alt="ASL nonmanual signals animation" loading="lazy">
+          <img class="overlay" src="images/FE_figure.png" alt="ASL nonmanual signals figure" loading="lazy">
         </div>
-        <div class="pub-info">
-          <a class="pub-title" href="https://ieeexplore.ieee.org/stamp/stamp.jsp?arnumber=9413126">Recognizing American Sign Language Nonmanual Signal Grammar Errors in Continuous Videos</a>
-          <div class="pub-authors">
-            <strong>Elahe Vahdani</strong>,
-            <a href="https://longlong-jing.github.io/">Longlong Jing</a>,
-            <a href="http://media-lab.ccny.cuny.edu/wordpress/YLTCCNYHomepage/yltian.html">Yingli Tian</a>,
-            <a href="https://huenerfauth.ist.rit.edu/">Matt Huenerfaut</a>
-          </div>
-          <div class="pub-venue">ICPR, 2020</div>
-          <div class="pub-links"><a href="https://arxiv.org/pdf/2005.00253.pdf">PDF</a></div>
-          <p class="pub-desc">We developed an educational tool that enables sign language students to automatically process their signing video assignments and receive immediate feedback on their fluency. This tool utilizes deep learning algorithms for the detection of grammatically important elements in continuous signing videos.</p>
+        <div>
+          <a class="pub-title" href="https://ieeexplore.ieee.org/document/9413126">Recognizing American Sign Language Nonmanual Signal Grammar Errors in Continuous Videos</a>
+          <div class="pub-authors"><strong>Elahe Vahdani</strong>, <a href="https://longlong-jing.github.io/">Longlong Jing</a>, <a href="http://media-lab.ccny.cuny.edu/wordpress/YLTCCNYHomepage/yltian.html">Yingli Tian</a>, <a href="https://huenerfauth.ist.rit.edu/">Matt Huenerfauth</a></div>
+          <div class="pub-meta"><span class="venue">ICPR</span><span class="year">2020</span>
+            <span class="pub-links"><a href="https://arxiv.org/pdf/2005.00253.pdf">PDF</a></span></div>
+          <p class="pub-desc">An educational tool that processes sign language students' video assignments and gives immediate feedback, by detecting grammatically important nonmanual elements in continuous signing.</p>
         </div>
-      </div>
+      </article>
 
       <!-- Multi-Modal ASL -->
-      <div class="pub">
+      <article class="pub">
         <div class="pub-thumb">
-          <img src="images/ASL.gif" alt="Multi-Modal ASL">
-          <img class="overlay" src="images/sign-before.png" alt="ASL figure">
+          <img src="images/ASL.gif" alt="Multi-modal ASL recognition animation" loading="lazy">
+          <img class="overlay" src="images/sign-before.png" alt="ASL recognition figure" loading="lazy">
         </div>
-        <div class="pub-info">
+        <div>
           <a class="pub-title" href="https://www.worldscientific.com/doi/abs/10.1142/S2972335324500017">Multi-Modal Multi-Channel American Sign Language Recognition</a>
-          <div class="pub-authors">
-            <strong>Elahe Vahdani</strong>,
-            <a href="https://longlong-jing.github.io/">Longlong Jing</a>,
-            <a href="http://media-lab.ccny.cuny.edu/wordpress/YLTCCNYHomepage/yltian.html">Yingli Tian</a>,
-            <a href="https://huenerfauth.ist.rit.edu/">Matt Huenerfaut</a>
-          </div>
-          <div class="pub-venue">IJAIR, 2023</div>
-          <div class="pub-links">
-            <a href="https://arxiv.org/pdf/1906.02851.pdf">PDF</a>
-            <a href="https://longlong-jing.github.io/ASL-100-RGBD/">Project Page</a>
-            <a href="https://nyu.databrary.org/volume/1062">Dataset</a>
-          </div>
-          <p class="pub-desc">A multi-modal, multi-channel framework for the real-time recognition of American Sign Language (ASL) signs from RGB-D videos.</p>
+          <div class="pub-authors"><strong>Elahe Vahdani</strong>, <a href="https://longlong-jing.github.io/">Longlong Jing</a>, <a href="http://media-lab.ccny.cuny.edu/wordpress/YLTCCNYHomepage/yltian.html">Yingli Tian</a>, <a href="https://huenerfauth.ist.rit.edu/">Matt Huenerfauth</a></div>
+          <div class="pub-meta"><span class="venue">IJAIR</span><span class="year">2023</span>
+            <span class="pub-links"><a href="https://arxiv.org/pdf/1906.02851.pdf">PDF</a><a href="https://longlong-jing.github.io/ASL-100-RGBD/">Project page</a><a href="https://nyu.databrary.org/volume/1062">Dataset</a></span></div>
+          <p class="pub-desc">A multi-modal, multi-channel framework for real-time recognition of American Sign Language signs from RGB-D video.</p>
         </div>
-      </div>
+      </article>
 
       <!-- ASL Dataset -->
-      <div class="pub">
+      <article class="pub">
         <div class="pub-thumb">
-          <img src="images/asldata.gif" alt="ASL Dataset">
-          <img class="overlay" src="images/datachannels.PNG" alt="ASL Dataset figure">
+          <img src="images/asldata.gif" alt="ASL-100-RGBD dataset animation" loading="lazy">
+          <img class="overlay" src="images/datachannels.PNG" alt="Dataset channels figure" loading="lazy">
         </div>
-        <div class="pub-info">
+        <div>
           <a class="pub-title" href="https://www.aclweb.org/anthology/2020.signlang-1.14.pdf">An Isolated-Signing RGBD Dataset of 100 American Sign Language Signs Produced by Fluent ASL Signers</a>
-          <div class="pub-authors">
-            <a href="https://www.linkedin.com/in/saadhassan1/">Saad Hassan</a>,
-            <a href="https://people.rit.edu/~lwb2627/">Larwan Berke</a>,
-            <strong>Elahe Vahdani</strong>,
-            <a href="https://longlong-jing.github.io/">Longlong Jing</a>,
-            <a href="http://media-lab.ccny.cuny.edu/wordpress/YLTCCNYHomepage/yltian.html">Yingli Tian</a>,
-            <a href="https://huenerfauth.ist.rit.edu/">Matt Huenerfaut</a>
-          </div>
-          <div class="pub-venue">LREC, 2020</div>
-          <div class="pub-links">
-            <a href="https://www.aclweb.org/anthology/2020.signlang-1.14.pdf">PDF</a>
-            <a href="https://longlong-jing.github.io/ASL-100-RGBD/">Project Page</a>
-            <a href="https://nyu.databrary.org/volume/1062">Dataset</a>
-          </div>
-          <p class="pub-desc">We have collected a new dataset consisting of color and depth videos of fluent American Sign Language (ASL) signers performing sequences of 100 ASL signs from a Kinect v2 sensor.</p>
+          <div class="pub-authors"><a href="https://www.linkedin.com/in/saadhassan1/">Saad Hassan</a>, <a href="https://people.rit.edu/~lwb2627/">Larwan Berke</a>, <strong>Elahe Vahdani</strong>, <a href="https://longlong-jing.github.io/">Longlong Jing</a>, <a href="http://media-lab.ccny.cuny.edu/wordpress/YLTCCNYHomepage/yltian.html">Yingli Tian</a>, <a href="https://huenerfauth.ist.rit.edu/">Matt Huenerfauth</a></div>
+          <div class="pub-meta"><span class="venue">LREC</span><span class="year">2020</span>
+            <span class="pub-links"><a href="https://www.aclweb.org/anthology/2020.signlang-1.14.pdf">PDF</a><a href="https://longlong-jing.github.io/ASL-100-RGBD/">Project page</a><a href="https://nyu.databrary.org/volume/1062">Dataset</a></span></div>
+          <p class="pub-desc">A new dataset of color and depth videos of fluent ASL signers performing 100 signs, recorded with a Kinect v2 sensor.</p>
         </div>
-      </div>
+      </article>
 
       <!-- Vehicle Re-ID -->
-      <div class="pub">
+      <article class="pub">
         <div class="pub-thumb">
-          <img src="images/vehicles.gif" alt="Vehicle Re-ID">
-          <img class="overlay" src="images/car-0.png" alt="Vehicle ReID figure">
+          <img src="images/vehicles.gif" alt="Multi-camera vehicle tracking animation" loading="lazy">
+          <img class="overlay" src="images/car-0.png" alt="Vehicle re-identification figure" loading="lazy">
         </div>
-        <div class="pub-info">
+        <div>
           <a class="pub-title" href="http://openaccess.thecvf.com/content_CVPRW_2019/papers/AI%20City/Chen_Multi-camera_Vehicle_Tracking_and_Re-identification_on_AI_City_Challenge_2019_CVPRW_2019_paper.pdf">Multi-camera Vehicle Tracking and Re-identification on AI City Challenge 2019</a>
-          <div class="pub-authors">
-            <a href="https://cyccty.github.io/">Yucheng Chen</a>,
-            <a href="https://longlong-jing.github.io/">Longlong Jing</a>,
-            <strong>Elahe Vahdani</strong>,
-            <a href="https://www.linkedin.com/in/ling-zhang-cs/">Ling Zhang</a>,
-            <a href="http://dianzi.nwpu.edu.cn/info/1269/5955.htm">Mingyi He</a>,
-            <a href="http://media-lab.ccny.cuny.edu/wordpress/YLTCCNYHomepage/yltian.html">Yingli Tian</a>
-          </div>
-          <div class="pub-venue">CVPR AI City Workshop, 2019</div>
-          <div class="pub-links">
-            <a href="http://openaccess.thecvf.com/content_CVPRW_2019/papers/AI%20City/Chen_Multi-camera_Vehicle_Tracking_and_Re-identification_on_AI_City_Challenge_2019_CVPRW_2019_paper.pdf">PDF</a>
-            <a href="data/cvpr19_poster_AICITY.pdf">Poster</a>
-          </div>
-          <p class="pub-desc">Our team's solutions for the image-based vehicle re-identification track and the multi-camera vehicle tracking track were featured in the AI City Challenge 2019. Our proposed framework significantly outperformed the current state-of-the-art vehicle ReID method, achieving a 16.3% improvement on the Veri dataset.</p>
+          <div class="pub-authors"><a href="https://cyccty.github.io/">Yucheng Chen</a>, <a href="https://longlong-jing.github.io/">Longlong Jing</a>, <strong>Elahe Vahdani</strong>, <a href="https://www.linkedin.com/in/ling-zhang-cs/">Ling Zhang</a>, <a href="http://dianzi.nwpu.edu.cn/info/1269/5955.htm">Mingyi He</a>, <a href="http://media-lab.ccny.cuny.edu/wordpress/YLTCCNYHomepage/yltian.html">Yingli Tian</a></div>
+          <div class="pub-meta"><span class="venue">CVPR Workshops</span><span class="year">2019</span>
+            <span class="pub-links"><a href="http://openaccess.thecvf.com/content_CVPRW_2019/papers/AI%20City/Chen_Multi-camera_Vehicle_Tracking_and_Re-identification_on_AI_City_Challenge_2019_CVPRW_2019_paper.pdf">PDF</a><a href="data/cvpr19_poster_AICITY.pdf">Poster</a></span></div>
+          <p class="pub-desc">Our solutions for the image-based vehicle re-identification and multi-camera vehicle tracking tracks of the AI City Challenge 2019; the re-identification framework improved on the prior state of the art on the VeRi dataset by 16.3%.</p>
         </div>
-      </div>
+      </article>
 
       <!-- Sensor Networks -->
-      <div class="pub">
+      <article class="pub">
         <div class="pub-thumb">
-          <img src="images/scheduling.gif" alt="Sensor Networks">
-          <img class="overlay" src="images/aligned_jobs.PNG" alt="Scheduling figure">
+          <img src="images/scheduling.gif" alt="Sensor network scheduling animation" loading="lazy">
+          <img class="overlay" src="images/aligned_jobs.PNG" alt="Job scheduling figure" loading="lazy">
         </div>
-        <div class="pub-info">
+        <div>
           <a class="pub-title" href="https://www.researchgate.net/profile/Matthew_Johnson36/publication/318124139_Gathering_Information_in_Sensor_Networks_for_Synchronized_Freshness/links/5a6a7ccd0f7e9b1c12d185eb/Gathering-Information-in-Sensor-Networks-for-Synchronized-Freshness.pdf">Gathering Information in Sensor Networks for Synchronized Freshness</a>
           <div class="pub-authors"><strong>Elahe Vahdani</strong>, Amotz Bar-Noy, Matthew P. Johnson, Tarek Abdelzaher</div>
-          <div class="pub-venue">IEEE SECON, 2017</div>
-          <div class="pub-links"><a href="https://www.researchgate.net/profile/Matthew_Johnson36/publication/318124139_Gathering_Information_in_Sensor_Networks_for_Synchronized_Freshness/links/5a6a7ccd0f7e9b1c12d185eb/Gathering-Information-in-Sensor-Networks-for-Synchronized-Freshness.pdf">PDF</a></div>
-          <p class="pub-desc">An approximation algorithm for the NP-hard optimization problem of scheduling a set of n given jobs, each with specific deadlines, using a minimum number of channels in a sensor network.</p>
+          <div class="pub-meta"><span class="venue">IEEE SECON</span><span class="year">2017</span>
+            <span class="pub-links"><a href="https://www.researchgate.net/profile/Matthew_Johnson36/publication/318124139_Gathering_Information_in_Sensor_Networks_for_Synchronized_Freshness/links/5a6a7ccd0f7e9b1c12d185eb/Gathering-Information-in-Sensor-Networks-for-Synchronized-Freshness.pdf">PDF</a></span></div>
+          <p class="pub-desc">An approximation algorithm for the NP-hard problem of scheduling deadline-constrained jobs on the minimum number of channels in a sensor network.</p>
+        </div>
+      </article>
+
+      <p class="footnote">* Equal contribution.</p>
+    </section>
+
+    <!-- ============ Background ============ -->
+    <section id="background">
+      <div class="section-head"><h2>Background</h2></div>
+      <div class="two-col">
+        <div class="edu">
+          <h3 class="small">Education</h3>
+          <p><strong>Ph.D. in Computer Science</strong>, The City University of New York — defended December 2023.</p>
+          <p class="muted">Dissertation: <em>Deep Learning-Based Human Action Understanding in Videos</em>. Advised by Professor Yingli Tian at the CUNY Media Lab; research spanning action detection in untrimmed videos, cross-modal retrieval, sign language understanding, time-series analysis and vehicle re-identification.</p>
+          <h3 class="small" style="margin-top:22px">Service</h3>
+          <p class="muted">Reviewer for CVPR and several journals.</p>
+          <h3 class="small" style="margin-top:22px">Outside work</h3>
+          <p class="muted">Hiking, swimming, yoga, strength training, and reading.</p>
+        </div>
+        <div>
+          <h3 class="small">Timeline</h3>
+          <ul class="timeline">
+            <li><span class="when">2024 –</span><span>Data Scientist, Microsoft Ads — multimodal retrieval and ranking for the Microsoft Audience Network</span></li>
+            <li><span class="when">Dec 2023</span><span>Defended Ph.D. thesis, The City University of New York</span></li>
+            <li><span class="when">Fall 2021</span><span>Research Science Intern, Dataminr</span></li>
+            <li><span class="when">Summer 2021</span><span>Data Science Intern, Expedia Group</span></li>
+            <li><span class="when">2018</span><span>Joined the CUNY Media Lab as a Ph.D. student under Professor Yingli Tian</span></li>
+          </ul>
         </div>
       </div>
     </section>
 
-    <!-- ====== Hobbies ====== -->
-    <section class="hobbies">
-      <h2>Hobbies</h2>
-      <ul>
-        <li>In my free time, I enjoy hiking, swimming, yoga, strength training, and reading.</li>
-      </ul>
+    <!-- ============ Contact ============ -->
+    <section id="contact">
+      <div class="section-head"><h2>Contact</h2></div>
+      <p class="lede">The fastest way to reach me is email: <a href="mailto:ellie.vahdani@gmail.com">ellie.vahdani@gmail.com</a>. I'm also on <a href="https://www.linkedin.com/in/elahe-vahdani/">LinkedIn</a>, <a href="https://github.com/elahevahd">GitHub</a> and <a href="https://scholar.google.com/citations?user=8UCruqIAAAAJ&hl=en">Google Scholar</a>.</p>
     </section>
 
-  </div>
+  </main>
+
+  <footer>
+    <div class="container row">
+      <span>© 2026 Elahe Vahdani</span>
+      <span>Plain HTML, no trackers · <a href="https://github.com/elahevahd/main">Source on GitHub</a></span>
+    </div>
+  </footer>
 </body>
 
 </html>
